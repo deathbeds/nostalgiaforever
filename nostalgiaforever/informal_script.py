@@ -199,11 +199,17 @@ if (
 
 
 
+
+
+
+
 from importnb import Notebook, reload
 get_ipython().run_line_magic('reload_ext', 'pidgin')
 get_ipython().run_line_magic('pidgin', 'conventions markdown')
 with Notebook():
-    informal = reload(__import__('informal'))
+    try: import informal
+    except: from . import informal
+    reload(informal)
     assert informal.__file__.endswith('.ipynb')
 
 
