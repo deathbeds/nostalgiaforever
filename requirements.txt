@@ -1,0 +1,5 @@
+watchdog
+pytest
+pytest-coverage
+pidgin
+tox
