@@ -4,14 +4,11 @@ import setuptools
 name = "nostalgiaforever"
 
 __version__ = None
-"""
+
 here = Path(__file__).parent
 
 exec((here / name / "_version.py").read_text())
 
-"""
-
-from importnb.utils.setup import build_ipynb
 setup_args = dict(
     name=name,
     version=__version__,
