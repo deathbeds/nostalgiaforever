@@ -5,9 +5,10 @@ install:
 - pip install -r requirements.txt
 - python -m pip install dist/nostalgiaforever-*.tar.gz --ignore-installed --no-deps
 script:
-- ipython --config nostalgiaforever/ipyconfig.py -m pytest nostalgiaforever/formal.ipynb
-- ipython --config nostalgiaforever/ipyconfig.py -m unittest tests
 - ipython profile create
+- cp nostalgiaforever/ipyconfig.py /home/travis/.ipython/profile_default/ipython_config.py
+- ipython -m pytest nostalgiaforever/formal.ipynb
+- ipython -m unittest tests
 - importnb-install
 - ipython -m readme
 
