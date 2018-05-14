@@ -30,5 +30,9 @@ setup_args = dict(
     install_requires=['pytest'],
 )
 
+setup_args.update(entry_points = {
+        'pytest11': ['pytest-nostalgia = nostalgiaforever.plugin',],
+})
+
 if __name__ == "__main__":
     setuptools.setup(**setup_args)

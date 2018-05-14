@@ -209,14 +209,15 @@ def test_nbconvert_script():
 
 
 
-from importnb import Notebook, reload
-get_ipython().run_line_magic('reload_ext', 'pidgin')
-get_ipython().run_line_magic('pidgin', 'conventions markdown')
-with Notebook():
-    try: import informal
-    except: from . import informal
-    reload(informal)
-    assert informal.__file__.endswith('.ipynb')
+if __name__ == '__main__':
+    from importnb import Notebook, reload
+    get_ipython().run_line_magic('reload_ext', 'pidgin')
+    get_ipython().run_line_magic('pidgin', 'conventions markdown')
+    with Notebook():
+        try: import informal
+        except: from . import informal
+        reload(informal)
+        assert informal.__file__.endswith('.ipynb')
 
 
 # In[10]:
