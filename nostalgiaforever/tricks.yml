@@ -2,4 +2,4 @@ tricks:
 - importnb.utils.watch.ModuleTrick:
     patterns: ['*.ipynb']
     shell_command: >
-      ipython --profile pidgin -m ${watch_dest_path}  && echo '---'
+        ipython --profile pidgin -m ${watch_dest_path}  && echo '---'
