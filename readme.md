@@ -7,6 +7,7 @@ Consequently, notebooks have evolved past being a medium for personal insight to
 
 ## Key Takeaways
 
+* Data and compute is modern research equipment.
 * Style of creating reproducible and reusable interactive compute sessions.
 * Best practices for composing testable computational essays.
 * Existing testing frameworks can be used with notebooks.
@@ -53,35 +54,25 @@ Consequently, notebooks have evolved past being a medium for personal insight to
 
 
 ```python
-from nbconvert.exporters.markdown import MarkdownExporter
-from nbconvert.preprocessors import Preprocessor
+    from nbconvert.exporters.markdown import MarkdownExporter
+    from nbconvert.preprocessors import Preprocessor
+    class ReplaceLinks(Preprocessor):
+        def preprocess_cell(self, cell, resources=None, **kwargs):
+            if cell['cell_type'] == 'markdown':
+                if isinstance(cell['source'], list): cell['source'] = ''.join(cell['source'])
+                cell['source'] = cell['source'].replace('.ipynb', '.md')
+            return cell, resources
 ```
 
 
 ```python
-class ReplaceLinks(Preprocessor):
-    def preprocess_cell(self, cell, resources=None, **kwargs):
-        if cell['cell_type'] == 'markdown':
-            if isinstance(cell['source'], list):
-                cell['source'] = ''.join(cell['source'])
-            cell['source'] = cell['source'].replace('.ipynb', '.md')
-        return cell, resources
-    
-exporter = MarkdownExporter(preprocess=[ReplaceLinks])
-```
-
-
-```python
-from pathlib import Path
-
-if __name__ == '__main__':
-    !jupyter nbconvert --to markdown readme.ipynb
-    for path in Path('.').rglob('*.ipynb'):
-        if all(_ not in str(path) for _ in ('.tox', '.ipynb_checkpoints')):
-            to = ('docs' / path)
-            to.parent.mkdir(exist_ok=True)
-            to.with_suffix('.md').write_text(exporter.from_filename(path)[0])
-
-    
-
+    from pathlib import Path
+    if __name__ == '__main__':
+        !jupyter nbconvert --to markdown readme.ipynb
+        for path in Path('.').rglob('*.ipynb'):
+            if all(not part.startswith('.') for part in path.parts):
+                to = ('docs' / path)
+                print(path)
+                to.parent.mkdir(exist_ok=True)
+                to.with_suffix('.md').write_text(MarkdownExporter(preprocess=[ReplaceLinks]).from_filename(path)[0])
 ```
