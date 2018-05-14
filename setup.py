@@ -22,6 +22,7 @@ setup_args = dict(
     url="https://github.com/deathbeds/nostalgiaforever",
     packages=['nostalgiaforever'],
     setup_requires=[
+        'importnb',
         'pytest-runner',
         'wheel>=0.31.0',
         'twine>=1.11.0',
@@ -29,7 +30,7 @@ setup_args = dict(
     ],
     include_package_data=True,
     license="BSD-3-Clause",
-    install_requires=[],
+    install_requires=['pytest'],
 )
 
 setup_args.update(entry_points = {
