@@ -1,5 +1,7 @@
 language: python
-python: ['3.6', 3.6-dev, 3.7-dev]
+python:
+- '3.6'
+- 3.6-dev
 install:
 - python setup.py sdist bdist_wheel
 - pip install -r requirements.txt
@@ -10,3 +12,21 @@ script:
 - ipython profile create
 - importnb-install
 - ipython -m readme
+deploy:
+- provider: pypi
+  user: docfast
+  skip-cleanup: true
+  password:
+    secure: i7ipItPGdZNRRIbI10vQZbN2ed0Iu9SJ819IIqHQBtACX0d1/nVNDhVvx4wq84D3f6/kMR+SlIykaO9J0FueaoOra5GLC0r7YEg2sJkKU6UumchrL7GHq2l//DNV9AdOdUAO0PeI3X87pCDhQjbmuqUaA0H6kxWZbcuPkutkliW6w7sCOiRJsa1nGN2ER6EROV2fodC9vMGZXymh4wLtBsnijL+QUbIOD7kgcaWLo4eN+aHOG0A1fWFcR0ZRt7t7jsDYhlAoTlVDnqkGDSEu6GnNcoax9vA6J3DwGEHx0o8+2JXUbEdd3G8Oa8y/ai3MYIMEN6Gjr1/nRNLeGhNQ1zwbHFlPYkK9MWe2qg0aa2J9sWRofXIDqLRy5EONo6CeL5f8TO9LSqJBLygwBtOxGNHvljDZprKjHAdKJC+s53xLAmlrPYsnveIZr6WEKWtf/rzekEmIl4CYVJ2w0MVW02ZVDJyStQnv7cD8CWKwB/pw+3YCrEhJh1aVREDrVGjhx4dxMUbJnSfXu7Y5X86qH+6owCpIcChuOyHBcHYYIoG2e3MKCJLIDEWzyKu7zWKvrm5aENajWqaD8a414l0H7COTyfTakivPidH5nKAGCzGmU2RdubloUQzfi2cl+2ZfqvlzXkNYzwl8FNAVttlEUsmdu0y0ubBmlNwWrVjiWpw=
+  on:
+    tags: true
+    distributions: sdist bdist_wheel
+    repo: deathbeds/nostalgiaforever
+    python: '3.6'
+- provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  local-dir: docs
+  on:
+    branch: $TRAVIS_BRANCH
+    python: '3.6'
