@@ -7,8 +7,7 @@ install:
 - pip install -r requirements.txt
 - python -m pip install dist/nostalgiaforever-*.tar.gz --ignore-installed --no-deps
 script:
-- ipython --config nostalgiaforever/ipyconfig.py -m pytest nostalgiaforever/informal.ipynb nostalgiaforever/formal.ipynb nostalgiaforever/continuous.ipynb
-- ipython --config nostalgiaforever/ipyconfig.py -m unittest tests
+- tox
 - ipython profile create
 - importnb-install
 - ipython -m readme
