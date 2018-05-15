@@ -43,6 +43,15 @@ setup_args = dict(
         'pidgin',
         'numba',
     ],
+   classifiers=(
+    "Development Status :: 4 - Beta",
+    "Framework :: IPython",
+    "Framework :: Jupyter",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "License :: OSI Approved :: BSD License",
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3.6',),
 )
 
 setup_args.update(entry_points = {

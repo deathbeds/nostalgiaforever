@@ -1,5 +1,5 @@
 
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/deathbeds/nostalgiaforever/master)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/deathbeds/nostalgiaforever/master?urlpath=lab/tree/readme.ipynb)[![Build Status](https://travis-ci.org/deathbeds/nostalgiaforever.svg?branch=master)](https://travis-ci.org/deathbeds/nostalgiaforever)[![PyPI version](https://badge.fury.io/py/nostalgiaforever.svg)](https://badge.fury.io/py/nostalgiaforever)![PyPI - Python Version](https://img.shields.io/pypi/pyversions/nostalgiaforever.svg)![PyPI - Format](https://img.shields.io/pypi/format/nostalgiaforever.svg)![PyPI - Format](https://img.shields.io/pypi/l/nostalgiaforever.svg)
 
     pip install nostalgiaforever
 
@@ -91,17 +91,6 @@ Consequently, notebooks have evolved past being a medium for personal insight to
         
 ```
 
-    [NbConvertApp] Converting notebook readme.ipynb to markdown
-    [NbConvertApp] Writing 4266 bytes to readme.md
-    readme.ipynb
-    nostalgiaforever/importing.ipynb
-    nostalgiaforever/plugin.ipynb
-    nostalgiaforever/reuse.ipynb
-    nostalgiaforever/testing.ipynb
-    nostalgiaforever/util.ipynb
-    test/test_nostalgia.ipynb
-
-
 # Run unit tests.
 
 
@@ -111,13 +100,6 @@ Consequently, notebooks have evolved past being a medium for personal insight to
             __import__('unittest').main('test', argv='--verbose'.split())
         except SystemExit: ...
 ```
-
-    .
-    ----------------------------------------------------------------------
-    Ran 1 test in 0.001s
-    
-    OK
-
 
     if __name__ == '__main__':
         !source activate p6 && ipython --profile pidgin -m nostalgiaforever.importing
