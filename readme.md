@@ -5,9 +5,25 @@
 
 # A Notebook is a Hypothesis
 
+> ### If a notebook is a hypothesis then it can be tested.
+
 Modern scientists are transitioning to a generation where notebooks are common currency. Consider how testing and documentation are crucial aspect of reusable open source software. Those best practices evolved to support the communities developing that software. Generations of open source established idioms and style guides which enable software collaboration at global scale. Now, access to reusable software is blending with modern science, where both disciplines share similar global ambitions to solve increasing complex, multi-objective problems.
 
 Consequently, notebooks have evolved past being a medium for personal insight to become assets for community innovation. They represent extra-personal objects for scientists who have evaluated procedural "units of thought" as computational narratives. In a way, a notebook represents a modern form of hypothesis, and scientists must get comfortable sharing them rapidly. Unfortunately, new authors lack conventions for sharing notebooks as hypotheses within a scientific community. This talk presents tactics from literate programming to create readable, reusable, and reproducible notebooks. These notebook authoring practices promote improved documentation and unit testing.
+
+---
+
+[__@docfast__](https://twitter.com/DocFast) presenting behalf of [`deathbeds`](https://github.com/deathbeds/)
+
+
+* [`importnb`](https://github.com/deathbeds/importnb)
+* [`jupyterlab-fonts`](https://github.com/deathbeds/jupyterlab-fonts)
+* [`jyve`](https://deathbeds.github.io/jyve/lab/)
+
+
+```python
+    from nostalgiaforever import importing, testing, reuse
+```
 
 ## Key Takeaways
 
@@ -42,6 +58,10 @@ Consequently, notebooks have evolved past being a medium for personal insight to
 
 [Github Pages](https://deathbeds.github.io/nostalgiaforever/)
 
+# Watcher
+
+    source activate p6 && cd nostalgiaforever/ && watchmedo tricks tricks.yml
+
 
 ```python
     from nbconvert.exporters.markdown import MarkdownExporter
@@ -72,7 +92,7 @@ Consequently, notebooks have evolved past being a medium for personal insight to
 ```
 
     [NbConvertApp] Converting notebook readme.ipynb to markdown
-    [NbConvertApp] Writing 3957 bytes to readme.md
+    [NbConvertApp] Writing 4266 bytes to readme.md
     readme.ipynb
     nostalgiaforever/importing.ipynb
     nostalgiaforever/plugin.ipynb
@@ -94,7 +114,7 @@ Consequently, notebooks have evolved past being a medium for personal insight to
 
     .
     ----------------------------------------------------------------------
-    Ran 1 test in 0.002s
+    Ran 1 test in 0.001s
     
     OK
 

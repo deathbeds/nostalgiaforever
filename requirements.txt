@@ -7,3 +7,4 @@ pytest-benchmark
 pidgin
 tox
 numba
+wheel
