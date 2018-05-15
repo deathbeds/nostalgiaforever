@@ -44,7 +44,8 @@ Consequently, notebooks have evolved past being a medium for personal insight to
 * Restart your machine
 * Start the watcher
 
-    source activate p6 && cd nostalgiaforever && watchmedo tricks tricks.yml
+        source activate p6 && cd nostalgiaforever && watchmedo tricks tricks.yml
+        
             
 * Prepare the Fira Code fonts https://github.com/deathbeds/jupyterlab-fonts.
 * Hey art nerd! Turn the color on!
@@ -74,9 +75,10 @@ Consequently, notebooks have evolved past being a medium for personal insight to
 ```python
     from pathlib import Path
     if __name__ == '__main__':
+        from IPython import get_ipython
         !jupyter nbconvert --to markdown readme.ipynb
         for path in Path('.').rglob('*.ipynb'):
-            from IPython import get_ipython
+            
             if all(not part.startswith('.') for part in path.parts):
                 to = ('docs' / path)
                 print(path)
@@ -86,17 +88,6 @@ Consequently, notebooks have evolved past being a medium for personal insight to
                     ("---\n"*2 if len(path.parts) > 1 else "") + MarkdownExporter(preprocess=[ReplaceLinks()]).from_filename(path)[0])
         
 ```
-
-    [NbConvertApp] Converting notebook readme.ipynb to markdown
-    [NbConvertApp] Writing 5273 bytes to readme.md
-    readme.ipynb
-    nostalgiaforever/importing.ipynb
-    nostalgiaforever/plugin.ipynb
-    nostalgiaforever/reuse.ipynb
-    nostalgiaforever/testing.ipynb
-    nostalgiaforever/util.ipynb
-    test/test_nostalgia.ipynb
-
 
 # Run unit tests.
 
@@ -108,12 +99,10 @@ Consequently, notebooks have evolved past being a medium for personal insight to
         except SystemExit: ...
 ```
 
-    .
-    ----------------------------------------------------------------------
-    Ran 1 test in 0.001s
-    
-    OK
 
+```python
+# Summary [clear all output then "Run All" -- or it didn't happen]
+```
 
     if __name__ == '__main__':
         !source activate p6 && ipython --profile pidgin -m nostalgiaforever.importing
