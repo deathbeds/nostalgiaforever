@@ -27,6 +27,10 @@ Consequently, notebooks have evolved past being a medium for personal insight to
     from nostalgiaforever import importing, testing, reuse
 ```
 
+
+    from nostalgiaforever import importing, testing, reuse
+
+
 # Key Technologies
 
 * [`importnb`](https://github.com/deathbeds/importnb)
@@ -53,11 +57,12 @@ Consequently, notebooks have evolved past being a medium for personal insight to
 * Restart your machine
 * Start the watcher
 
-        source activate p6 && cd nostalgiaforever && watchmedo tricks tricks.yml
+        source activate p6 && cd ahypotehsis/nostalgiaforever && watchmedo tricks tricks.yml
         
             
 * Prepare the Fira Code fonts https://github.com/deathbeds/jupyterlab-fonts.
 * Hey art nerd! Turn the color on!
+* Cut the release.
 
 # Build the docs.
 
@@ -98,6 +103,17 @@ Consequently, notebooks have evolved past being a medium for personal insight to
         
 ```
 
+    [NbConvertApp] Converting notebook readme.ipynb to markdown
+    [NbConvertApp] Writing 5212 bytes to readme.md
+    readme.ipynb
+    nostalgiaforever/importing.ipynb
+    nostalgiaforever/plugin.ipynb
+    nostalgiaforever/reuse.ipynb
+    nostalgiaforever/testing.ipynb
+    nostalgiaforever/util.ipynb
+    test/test_nostalgia.ipynb
+
+
 # Run unit tests.
 
 
@@ -108,10 +124,21 @@ Consequently, notebooks have evolved past being a medium for personal insight to
         except SystemExit: ...
 ```
 
+    .
+    ----------------------------------------------------------------------
+    Ran 1 test in 0.002s
+    
+    OK
+
+
 
 ```python
 # Summary [clear all output then "Run All" -- or it didn't happen]
 ```
+
+
+# Summary [clear all output then "Run All" -- or it didn't happen]
+
 
     if __name__ == '__main__':
         !source activate p6 && ipython --profile pidgin -m nostalgiaforever.importing
