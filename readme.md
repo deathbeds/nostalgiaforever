@@ -1,5 +1,5 @@
 
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/deathbeds/nostalgiaforever/master?urlpath=lab/tree/readme.ipynb)[![Build Status](https://travis-ci.org/deathbeds/nostalgiaforever.svg?branch=master)](https://travis-ci.org/deathbeds/nostalgiaforever)[![PyPI version](https://badge.fury.io/py/nostalgiaforever.svg)](https://badge.fury.io/py/nostalgiaforever)![PyPI - Python Version](https://img.shields.io/pypi/pyversions/nostalgiaforever.svg)![PyPI - Format](https://img.shields.io/pypi/format/nostalgiaforever.svg)![PyPI - Format](https://img.shields.io/pypi/l/nostalgiaforever.svg)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/deathbeds/nostalgiaforever/master?urlpath=lab/tree/readme.ipynb)[![Build Status](https://travis-ci.org/deathbeds/nostalgiaforever.svg?branch=master)](https://travis-ci.org/deathbeds/nostalgiaforever)[![PyPI version](https://badge.fury.io/py/nostalgiaforever.svg)](https://badge.fury.io/py/nostalgiaforever)![PyPI - Python Version](https://img.shields.io/pypi/pyversions/nostalgiaforever.svg)![PyPI - Format](https://img.shields.io/pypi/format/nostalgiaforever.svg)
 
     pip install nostalgiaforever
 
