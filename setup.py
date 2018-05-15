@@ -9,6 +9,13 @@ here = Path(__file__).parent
 
 exec((here / name / "_version.py").read_text())
 
+description =""""""
+for info in ("readme.md", ):
+    with (here/info).open('r') as file:
+        description += file.read()
+        description += "\n\n"
+
+
 setup_args = dict(
     name=name,
     version=__version__,
@@ -16,6 +23,7 @@ setup_args = dict(
     author_email="tony.fast@gmail.com",
     description="Import .ipynb files as modules in the system path.",
     long_description_content_type='text/markdown',
+    long_description=description,
     url="https://github.com/deathbeds/nostalgiaforever",
     packages=['nostalgiaforever'],
     setup_requires=[
