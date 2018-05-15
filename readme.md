@@ -32,11 +32,6 @@ Consequently, notebooks have evolved past being a medium for personal insight to
 * Existing testing frameworks can be used with notebooks.
 
 
-
-```python
-    from IPython import get_ipython
-```
-
 ## Order
 
 1. [`readme.ipynb`](readme.ipynb)
@@ -81,6 +76,7 @@ Consequently, notebooks have evolved past being a medium for personal insight to
     if __name__ == '__main__':
         !jupyter nbconvert --to markdown readme.ipynb
         for path in Path('.').rglob('*.ipynb'):
+            from IPython import get_ipython
             if all(not part.startswith('.') for part in path.parts):
                 to = ('docs' / path)
                 print(path)
@@ -91,6 +87,17 @@ Consequently, notebooks have evolved past being a medium for personal insight to
         
 ```
 
+    [NbConvertApp] Converting notebook readme.ipynb to markdown
+    [NbConvertApp] Writing 5273 bytes to readme.md
+    readme.ipynb
+    nostalgiaforever/importing.ipynb
+    nostalgiaforever/plugin.ipynb
+    nostalgiaforever/reuse.ipynb
+    nostalgiaforever/testing.ipynb
+    nostalgiaforever/util.ipynb
+    test/test_nostalgia.ipynb
+
+
 # Run unit tests.
 
 
@@ -100,6 +107,13 @@ Consequently, notebooks have evolved past being a medium for personal insight to
             __import__('unittest').main('test', argv='--verbose'.split())
         except SystemExit: ...
 ```
+
+    .
+    ----------------------------------------------------------------------
+    Ran 1 test in 0.001s
+    
+    OK
+
 
     if __name__ == '__main__':
         !source activate p6 && ipython --profile pidgin -m nostalgiaforever.importing
