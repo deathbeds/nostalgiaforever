@@ -20,10 +20,19 @@ Consequently, notebooks have evolved past being a medium for personal insight to
 * [`jupyterlab-fonts`](https://github.com/deathbeds/jupyterlab-fonts)
 * [`jyve`](https://deathbeds.github.io/jyve/lab/)
 
+[See __deathbeds__ present @ JupyterCon](https://conferences.oreilly.com/jupyter/jup-ny/public/schedule/detail/68439)
+
 
 ```python
     from nostalgiaforever import importing, testing, reuse
 ```
+
+# Key Technologies
+
+* [`importnb`](https://github.com/deathbeds/importnb)
+* [`doctest`](https://docs.python.org/3/library/doctest.html)
+* [`unittest`](https://docs.python.org/3/library/unittest.html)
+* [`pytest`](http://doc.pytest.org/)
 
 ## Key Takeaways
 
