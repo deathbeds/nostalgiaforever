@@ -1,2 +1,2 @@
 include readme.md
-recursive-include . *.ipynb
+recursive-include nostalgiaforever *.ipynb
