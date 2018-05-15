@@ -27,10 +27,6 @@ Consequently, notebooks have evolved past being a medium for personal insight to
     from nostalgiaforever import importing, testing, reuse
 ```
 
-
-    from nostalgiaforever import importing, testing, reuse
-
-
 # Key Technologies
 
 * [`importnb`](https://github.com/deathbeds/importnb)
@@ -104,7 +100,7 @@ Consequently, notebooks have evolved past being a medium for personal insight to
 ```
 
     [NbConvertApp] Converting notebook readme.ipynb to markdown
-    [NbConvertApp] Writing 5212 bytes to readme.md
+    [NbConvertApp] Writing 5830 bytes to readme.md
     readme.ipynb
     nostalgiaforever/importing.ipynb
     nostalgiaforever/plugin.ipynb
@@ -123,6 +119,13 @@ Consequently, notebooks have evolved past being a medium for personal insight to
             __import__('unittest').main('test', argv='--verbose'.split())
         except SystemExit: ...
 ```
+
+
+    if __name__ == '__main__':
+        try:
+            __import__('unittest').main('test', argv='--verbose'.split())
+        except SystemExit: ...
+
 
     .
     ----------------------------------------------------------------------
