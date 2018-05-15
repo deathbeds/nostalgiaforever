@@ -1,6 +1,8 @@
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/deathbeds/nostalgiaforever/master)
 
+    pip install nostalgiaforever
+
 # A Notebook is a Hypothesis
 
 Modern scientists are transitioning to a generation where notebooks are common currency. Consider how testing and documentation are crucial aspect of reusable open source software. Those best practices evolved to support the communities developing that software. Generations of open source established idioms and style guides which enable software collaboration at global scale. Now, access to reusable software is blending with modern science, where both disciplines share similar global ambitions to solve increasing complex, multi-objective problems.
@@ -36,14 +38,9 @@ Consequently, notebooks have evolved past being a medium for personal insight to
 * Prepare the Fira Code fonts https://github.com/deathbeds/jupyterlab-fonts.
 * Hey art nerd! Turn the color on!
 
-
-```python
-# Build the docs.
-```
-
-
 # Build the docs.
 
+[Github Pages](https://deathbeds.github.io/nostalgiaforever/)
 
 
 ```python
@@ -75,7 +72,7 @@ Consequently, notebooks have evolved past being a medium for personal insight to
 ```
 
     [NbConvertApp] Converting notebook readme.ipynb to markdown
-    [NbConvertApp] Writing 3847 bytes to readme.md
+    [NbConvertApp] Writing 3957 bytes to readme.md
     readme.ipynb
     nostalgiaforever/importing.ipynb
     nostalgiaforever/plugin.ipynb
@@ -85,14 +82,7 @@ Consequently, notebooks have evolved past being a medium for personal insight to
     test/test_nostalgia.ipynb
 
 
-
-```python
 # Run unit tests.
-```
-
-
-# Run unit tests.
-
 
 
 ```python
@@ -108,3 +98,8 @@ Consequently, notebooks have evolved past being a medium for personal insight to
     
     OK
 
+
+    if __name__ == '__main__':
+        !source activate p6 && ipython --profile pidgin -m nostalgiaforever.importing
+        !source activate p6 && ipython --profile pidgin -m nostalgiaforever.testing
+        !source activate p6 && ipython --profile pidgin -m nostalgiaforever.reuse
