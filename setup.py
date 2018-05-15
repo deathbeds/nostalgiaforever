@@ -27,7 +27,14 @@ setup_args = dict(
     ],
     include_package_data=True,
     license="BSD-3-Clause",
-    install_requires=['pytest'],
+    install_requires=[
+        'ipython',
+        'watchdog',
+        'pytest',
+        'importnb',
+        'pidgin',
+        'numba',
+    ],
 )
 
 setup_args.update(entry_points = {
