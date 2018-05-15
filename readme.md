@@ -53,7 +53,7 @@ Consequently, notebooks have evolved past being a medium for personal insight to
 * Restart your machine
 * Start the watcher
 
-        source activate p6 && cd ahypotehsis/nostalgiaforever && watchmedo tricks tricks.yml
+        source activate p6 && cd ahypothesis/nostalgiaforever && watchmedo tricks tricks.yml
         
             
 * Prepare the Fira Code fonts https://github.com/deathbeds/jupyterlab-fonts.
@@ -63,10 +63,6 @@ Consequently, notebooks have evolved past being a medium for personal insight to
 # Build the docs.
 
 [Github Pages](https://deathbeds.github.io/nostalgiaforever/)
-
-# Watcher
-
-    source activate p6 && cd nostalgiaforever/ && watchmedo tricks tricks.yml
 
 
 ```python
@@ -100,7 +96,7 @@ Consequently, notebooks have evolved past being a medium for personal insight to
 ```
 
     [NbConvertApp] Converting notebook readme.ipynb to markdown
-    [NbConvertApp] Writing 5830 bytes to readme.md
+    [NbConvertApp] Writing 5882 bytes to readme.md
     readme.ipynb
     nostalgiaforever/importing.ipynb
     nostalgiaforever/plugin.ipynb
@@ -109,6 +105,10 @@ Consequently, notebooks have evolved past being a medium for personal insight to
     nostalgiaforever/util.ipynb
     test/test_nostalgia.ipynb
 
+
+## Watcher with [watchdog](https://github.com/gorakhargosh/watchdog/blob/master/src/watchdog/tricks/__init__.py)
+
+    source activate p6 && cd ahypothesis/nostalgiaforever/ && watchmedo tricks tricks.yml
 
 # Run unit tests.
 
@@ -120,16 +120,9 @@ Consequently, notebooks have evolved past being a medium for personal insight to
         except SystemExit: ...
 ```
 
-
-    if __name__ == '__main__':
-        try:
-            __import__('unittest').main('test', argv='--verbose'.split())
-        except SystemExit: ...
-
-
     .
     ----------------------------------------------------------------------
-    Ran 1 test in 0.002s
+    Ran 1 test in 0.001s
     
     OK
 
